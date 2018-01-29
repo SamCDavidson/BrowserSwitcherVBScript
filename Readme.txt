@@ -3,6 +3,11 @@ Fast lightweight Windows CScript for seamless self executed  selection switching
 
 Uses VB SendKey instructions along with two second sleep functions, this universal desk top macro simplifies a normally arcane Windows user setting.
 
+A sequentially ordered script, rearranging the orders of execution reverses this script for environments where Chrome is the default browser and IE must be temporarily set for completing some web app functions.
+
+WshShell.Run "%systemroot%\system32\control.exe /name Microsoft.DefaultPrograms /page pageDefaultProgram\pageAdvancedSettings?pszAppName=Internet%20Explorer"
+WshShell.Run "%systemroot%\system32\control.exe /name Microsoft.DefaultPrograms /page pageDefaultProgram\pageAdvancedSettings?pszAppName=Google%20Chrome"
+
 Useful inside internal networks where Microsoft Internet Explorer is the preferred desktop browser for reasons such as application compatibility.
 
 When varying applications work better in Google Chrome, this script can be loaded in web page code upon browser agent detection such as automatically from a redirected landing page prompting the end user to accept Microsoft browser warnings required for direct execution.
