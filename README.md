@@ -1,28 +1,12 @@
 # BrowserSwitcherVBScript
- Msgbox " PRESS OK and temporarily set Chrome as your default browser.",vbExclamation+vbSystemModal,"Step 1 of 4"
+Fast lightweight Windows CScript for limited permission / standard user profiles without local Administrator privileges.
 
-Set WshShell = WScript.CreateObject("WScript.Shell")
-WshShell.Run "%windir%\system32\control.exe /name Microsoft.DefaultPrograms /page pageDefaultProgram\pageAdvancedSettings?pszAppName=Google%20Chrome"
-WScript.Sleep 2000
-WshShell.SendKeys "{TAB}"
-WshShell.SendKeys " "
-WshShell.SendKeys "{TAB}"
-WshShell.SendKeys "{TAB}"
-WScript.Sleep 2000
-WshShell.SendKeys " "
-Msgbox "Your default browser is now Google Chrome.      PRESS OK and launch Chrome !",vbInformation+vbSystemModal,"Step 2 of 4"
+Useful inside internal networks where Microsoft Internet Explorer is the preferred desktop browser for reasons such as application compatibility.
 
-Set WSHShell = CreateObject("WScript.Shell")
-result = WSHShell.Run("c:\PROGRA~2\google\chrome\application\chrome.exe --restore-last-session",,True)
-msgbox "When you are finished with Google Chrome, PRESS OK and SWITCH BACK TO INTERNET EXPLORER.   It is OK to move this popup box out of the way, it remains open and on top of your desktop until you're finished.",vbInformation+vbSystemModal,"Step 3 of 4"
+When varying applications work better in Google Chrome, this script can be loaded upon browser agent detection such as automatically from a redirected landing page prompting the end user to accept Microsoft browser warnings required for direct execution.
 
-Set WshShell = WScript.CreateObject("WScript.Shell")
-WshShell.Run "%systemroot%\system32\control.exe /name Microsoft.DefaultPrograms /page pageDefaultProgram\pageAdvancedSettings?pszAppName=Internet%20Explorer"
-WScript.Sleep 2000
-WshShell.SendKeys "{TAB}"
-WshShell.SendKeys " "
-WshShell.SendKeys "{TAB}"
-WshShell.SendKeys "{TAB}"
-WScript.Sleep 2000
-WshShell.SendKeys " "
-Msgbox "Thank you for using Chrome! Your Default web browser is back to Microsoft Internet Explorer.      PRESS OK to EXIT.",vbInformation+vbSystemModal,"Step 4 of FINISHED !"
+Four VBMODAL stay on top dialog boxes advises the user their default browser choices is going to be reconfigured for Chrome after clicking OK, then advises the user their default browser choice is now Chrome and another VBMODAL window remains on top while the user seamlessly clicks URL's for effortless opening inside Chrome.
+
+Narrow in its function, created out of necessity for an organization heavily reliant on MS IE for mission critical web based applications for the indefinite future while phasing in HTML5 applications requiring Chrome.
+
+The organization would've been forced to expel tremendous development costs to port their newly installed HTML5 apps to legacy code since the option of teaching the broad user base the steps to open Control Panel and Default Programs was wholly rejected along with rejecting remote view / RDP remote browser configuration since field office employees would be over slow links or offline completely.
