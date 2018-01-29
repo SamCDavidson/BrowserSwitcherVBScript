@@ -1,5 +1,7 @@
 BrowserSwitcherVBScript
-Fast lightweight Windows CScript for seamless self executed  selection switching of an unprivileged  users default browser choice. Specifically designed for non local administrator accounts with locked down Windows user rights.
+Fast lightweight Windows CScript for seamless self executed toggle selection switching of an unprivileged  users default browser choice. Specifically designed for non local administrator accounts with locked down Windows user rights.
+
+In current form, it temporarily adjusts your current IE Default Browser settings too Google Chrome and remains resident until you're finished in Google. Upon confirmation of an OK Dialog Box, your default browser selecion is reset to IE before the VB exits.
 
 Uses VB SendKey instructions along with two second sleep functions, this universal desk top macro simplifies a normally arcane Windows user setting.
 
